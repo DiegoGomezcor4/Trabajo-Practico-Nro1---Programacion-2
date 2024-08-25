@@ -11,6 +11,7 @@ def procesar_palabras(entrada):
     # Dividimos la entrada en palabras usando la coma como delimitador
     palabras = entrada.split(',')
     
+    
     # Ordenamos las palabras utilizando el metodo sorted()
     palabras_ordenadas = sorted(palabras)
     
@@ -23,3 +24,6 @@ def procesar_palabras(entrada):
 
 entrada = 'te,felicito,que,bien,actuas'
 procesar_palabras(entrada)
+
+entrada2 = 'hola,como,estas,el,dia,de,hoy'
+procesar_palabras(entrada2)

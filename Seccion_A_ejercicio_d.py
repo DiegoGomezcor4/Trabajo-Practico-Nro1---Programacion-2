@@ -10,26 +10,31 @@ listas(['b', 'a', 'c'], ['e', 'b', 'd', 'c'])
 """
 
 def listas_diferencia(lista1, lista2):
-    # Convertir las listas a conjuntos
-    conjunto1 = set(lista1)
-    conjunto2 = set(lista2)
-    
     # Encontrar elementos comunes
-    elementos_comunes = list(conjunto1.intersection(conjunto2))
+    elementos_comunes = []
+    for elemento in lista1:
+        if elemento in lista2:
+            elementos_comunes.append(elemento)
     
-    # Ordenar los elementos comunes en orden inverso
+    # Ordenar los elementos comunes enorden inverso
     elementos_comunes.sort(reverse=True)
-
-    # Encontrar elementos no comunes
-    elementos_no_comunes = list(conjunto1.symmetric_difference(conjunto2))
-
-    # Ordenar los elementos no comunes alfabéticamente
+    
+    # Encontrar elementos no cumunes
+    elementos_no_comunes = []
+    for elemento in lista1:
+        if elemento not in lista2:
+            elementos_no_comunes.append(elemento)
+    for elemento in lista2:
+        if elemento not in lista1:
+            elementos_no_comunes.append(elemento)
+            
+    # Ordenar elementos no comunes alfabéticamente
     elementos_no_comunes.sort()
     
-    # Imprimir
     print(elementos_comunes)
     print(elementos_no_comunes)
+
+
+# Ejemplo
     
-    # Ejemplo
-    
-listas_diferencia(['i', 'a', 'c','e'], ['z','e','b','d','c'])
+listas_diferencia(['b', 'a', 'c'], ['e','b','d','c'])
