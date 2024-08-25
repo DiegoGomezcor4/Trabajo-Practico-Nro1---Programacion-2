@@ -5,21 +5,22 @@ una palabra no se encuentran en una lista de caracteres prohibidos.
 """
 
 def palabra_no_tiene_letras(palabra, letras_prohibidas):
-    # Convertimos la lista letras prohibidas en un conjunto para hacer la busqueda mas eficiente
-    letras_prohibidas_set = set(letras_prohibidas)
-    
     # Verificamos cada carácter en la palabra
     for letra in palabra:
-        if letras_prohibidas_set:
+        if letra in letras_prohibidas:  
             return False
-    
     return True
 
 
 # Ejemplo
- 
+
+# prueba 1
 palabra = 'hola'
 letras_prohibidas = ['a', 'e','i','o','u']
 
 resultado = palabra_no_tiene_letras(palabra,letras_prohibidas)
 print(resultado)
+
+# prueba 2
+palabra2 = 'pmns'
+print(palabra_no_tiene_letras(palabra2, letras_prohibidas))
